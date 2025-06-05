@@ -11,7 +11,7 @@ Password varchar(20) not null check(len(Password) between 6 and 20)
 
 create table EventDetails(
 EventId int primary key,
-EventName varchar(50) not null check(len(EventName) between 1 and 50),
+EventName varchar(50) not null,
 EventCategory varchar(50) not null,
 EventDate datetime not null,
 Description varchar(50),
@@ -40,6 +40,6 @@ create table ParticipantEventDetails(
 Id int primary key,
 ParticipantEmailId varchar(50) not null references UserInfo(EmailId),
 EventId int not null references EventDetails(EventId) on delete cascade,
-SessionId int not null references SessionInfo(SessionId) on delete cascade,
+SessionId int not null references SessionInfo(SessionId),
 IsAttended bit check(IsAttended in(0,1))
 )

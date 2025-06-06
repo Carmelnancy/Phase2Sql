@@ -1,5 +1,7 @@
 create database Emp_Audit
 
+use Emp_Audit
+
 CREATE TABLE Employees ( 
     EmpID INT PRIMARY KEY, 
     EmpName VARCHAR(100), 
